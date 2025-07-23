@@ -1,9 +1,32 @@
+
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import GlidexLogo from "../images/Glidex Logo.png";
 import UserIcon from "../images/user.svg";
 import CartIcon from "../images/cart.svg";
+
+// Framer Motion variants for staggered slide in/out
+const menuItemVariants = {
+  open: i => ({
+    opacity: 1,
+    x: 0,
+    transition: {
+      x: { type: "spring", stiffness: 400, damping: 30 },
+      opacity: { duration: 0.2 },
+      delay: 0.08 * i
+    }
+  }),
+  closed: i => ({
+    opacity: 0,
+    x: 40,
+    transition: {
+      x: { type: "spring", stiffness: 400, damping: 30 },
+      opacity: { duration: 0.15 },
+      delay: 0.04 * i
+    }
+  })
+};
 
 export default function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -95,34 +118,52 @@ export default function Navbar() {
             ></div>
             {/* Sliding Menu */}
             <div
-              className={`relative w-4/5 max-w-xs h-screen bg-white/50 shadow-lg p-8 flex flex-col items-end ${
+              className={`relative w-4/5 max-w-xs h-screen shadow-lg p-8 flex flex-col items-end ${
                 menuLeaving
                   ? "animate-slide-out-right"
                   : "animate-slide-in-right"
               }`}
             >
               <button
-                className="mb-8 self-end w-10 h-10 flex items-center justify-center text-gray-700 text-4xl"
+                className="mt-2 mb-8 self-end w-12 h-12 flex items-center justify-center text-white text-5xl"
                 aria-label="Close Menu"
                 onClick={handleCloseMenu}
                 style={{ lineHeight: 1 }}
               >
                 &times;
               </button>
-              <nav className="flex flex-col space-y-8 w-full text-right">
-                <FlipLink to="/" onClick={handleCloseMenu}>
-                  Home
-                </FlipLink>
-                <FlipLink to="/about" onClick={handleCloseMenu}>
-                  About
-                </FlipLink>
-                <FlipLink to="/shop" onClick={handleCloseMenu}>
-                  Shop
-                </FlipLink>
-
-                <FlipLink to="/contact" onClick={handleCloseMenu}>
-                  Contact
-                </FlipLink>
+              <nav className="flex flex-col space-y-16 w-full text-right">
+                <motion.ul
+                  variants={{
+                    open: {
+                      transition: { staggerChildren: 0.08, delayChildren: 0.05 }
+                    },
+                    closed: {
+                      transition: { staggerChildren: 0.04, staggerDirection: -1 }
+                    }
+                  }}
+                  initial="closed"
+                  animate={menuOpen && !menuLeaving ? "open" : "closed"}
+                  exit="closed"
+                  className="flex flex-col space-y-12 w-full text-right"
+                >
+                  {[
+                    { to: "/", label: "Home" },
+                    { to: "/about", label: "About" },
+                    { to: "/shop", label: "Shop" },
+                    { to: "/contact", label: "Contact" },
+                  ].map((item, i) => (
+                    <motion.li
+                      key={item.to}
+                      custom={i}
+                      variants={menuItemVariants}
+                    >
+                      <FlipLink to={item.to} onClick={handleCloseMenu}>
+                        {item.label}
+                      </FlipLink>
+                    </motion.li>
+                  ))}
+                </motion.ul>
               </nav>
             </div>
             <style>{`
