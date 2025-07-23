@@ -1,8 +1,14 @@
 import { useState, useEffect, useRef } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import heroSlides from "../data/heroSlides";
-import featureImg from "../images/electric-scooter-feature-1.jpg";
+import proX1Img from "../images/glider-pro-x1.jpg";
+import urbanLiteImg from "../images/glider-urban-lite.jpg";
+import explorerZImg from "../images/glider-explorer-z.jpg";
 import BookTodayButton from "../components/BookTodayButton";
+
+import featureImg from "../images/electric-scooter-feature-1.jpg";
+import { BestSellerCard } from "../components/BestSellerCard";
+import CountdownTimer from "../components/CountdownTimer";
 
 
 const SLIDE_DURATION = 10000; // 10 seconds
@@ -301,13 +307,15 @@ export default function Home() {
         </div>
       </section>
 
+    
+
       {/* Shop Best Seller Section */}
       <section className="w-full mx-auto px-4 sm:px-8 md:px-12 py-24 flex flex-col items-center">
         <h2 className="text-3xl md:text-4xl font-bold text-center mb-2 text-white">Shop Best Seller</h2>
         <p className="text-center max-w-2xl mx-auto text-gray-400 mb-12 text-lg">Discover our most popular electric bikes, chosen for their performance, reliability, and style. Perfect for every journey.</p>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 w-full">
           <BestSellerCard
-            image={featureImg}
+            image={proX1Img}
             title="Glidex Pro X1"
             description="A high-performance e-bike for city and adventure."
             features={[
@@ -317,7 +325,7 @@ export default function Home() {
             ]}
           />
           <BestSellerCard
-            image={featureImg}
+            image={urbanLiteImg}
             title="Glidex Urban Lite"
             description="Lightweight, efficient, and perfect for daily commutes."
             features={[
@@ -327,7 +335,7 @@ export default function Home() {
             ]}
           />
           <BestSellerCard
-            image={featureImg}
+            image={explorerZImg}
             title="Glidex Explorer Z"
             description="Built for long range and rugged terrain."
             features={[
@@ -337,10 +345,24 @@ export default function Home() {
             ]}
           />
         </div>
+        {/* Countdown Timer Section */}
+      <div className="w-full max-w-none py-8 flex flex-col items-center">
+        <div className="w-full bg-[#232323] shadow-lg flex flex-col md:flex-row items-center justify-between p-8 gap-8">
+          {/* Text Left */}
+          <div className="w-full md:w-1/2 text-left">
+            <h3 className="text-2xl md:text-3xl font-bold text-white mb-2">Grab Soon! Offer Ends Soon.</h3>
+            <p className="text-gray-300 text-base md:text-lg mb-0">Don't miss out on our limited-time deals for our best-selling e-bikes. Secure yours before the countdown hits zero!</p>
+          </div>
+          {/* Timer Right */}
+          <div className="w-full md:w-1/2 flex justify-end">
+            <CountdownTimer />
+          </div>
+        </div>
+      </div>
       </section>
+
+       
     </>
   );
 }
 
-
-import { BestSellerCard } from "../components/BestSellerCard";
