@@ -4,6 +4,7 @@ import heroSlides from "../data/heroSlides";
 import featureImg from "../images/electric-scooter-feature-1.jpg";
 import BookTodayButton from "../components/BookTodayButton";
 
+
 const SLIDE_DURATION = 10000; // 10 seconds
 
 export default function Home() {
@@ -23,15 +24,6 @@ export default function Home() {
       bar.style.transition = `width ${SLIDE_DURATION}ms linear`;
       bar.style.width = "100%";
     }
-  }, [current]);
-
-  // Auto-advance timer
-  useEffect(() => {
-    timerRef.current && clearTimeout(timerRef.current);
-    timerRef.current = setTimeout(() => {
-      setCurrent((prev) => (prev + 1) % slideCount);
-    }, SLIDE_DURATION);
-    return () => clearTimeout(timerRef.current);
   }, [current, slideCount]);
 
   const nextSlide = () => {
@@ -155,7 +147,6 @@ export default function Home() {
               </div>
             </div>
           </div>
-
           {/* Slider Controls */}
           <div className="flex gap-4 mt-8 flex-col">
             {/* Timer Bar */}
@@ -281,35 +272,75 @@ export default function Home() {
             </button>
           </div>
         </div>
-          {/* Marquee Text */}
-      <div 
-        className="w-full overflow-hidden my-8 relative"
-        style={{
-          maskImage: 'linear-gradient(90deg, transparent 0%, #000 30%, #000 70%, transparent 100%)',
-          WebkitMaskImage: 'linear-gradient(90deg, transparent 0%, #000 30%, #000 70%, transparent 100%)',
-        }}
-      >
-        <div
-          className="marquee-inner whitespace-nowrap text-4xl font-bold tracking-wide text-gray-400"
+        {/* Marquee Text */}
+        <div 
+          className="w-full overflow-hidden my-8 relative"
           style={{
-            display: 'inline-block',
-            whiteSpace: 'nowrap',
-            animation: 'marqueeText 12s linear infinite',
+            maskImage: 'linear-gradient(90deg, transparent 0%, #000 30%, #000 70%, transparent 100%)',
+            WebkitMaskImage: 'linear-gradient(90deg, transparent 0%, #000 30%, #000 70%, transparent 100%)',
           }}
         >
-          <span style={{ display: 'inline-block' }}>
-            *  Silent Speed, Green Adventure &nbsp; *  Silent Speed, Green Adventure &nbsp; *  Silent Speed, Green Adventure &nbsp; *  Silent Speed, Green Adventure &nbsp; *  Silent Speed, Green Adventure &nbsp; *  Silent Speed, Green Adventure
-          </span>
+          <div
+            className="marquee-inner whitespace-nowrap text-4xl font-bold tracking-wide text-gray-400"
+            style={{
+              display: 'inline-block',
+              whiteSpace: 'nowrap',
+              animation: 'marqueeText 12s linear infinite',
+            }}
+          >
+            <span style={{ display: 'inline-block' }}>
+              *  Silent Speed, Green Adventure &nbsp; *  Silent Speed, Green Adventure &nbsp; *  Silent Speed, Green Adventure &nbsp; *  Silent Speed, Green Adventure &nbsp; *  Silent Speed, Green Adventure &nbsp; *  Silent Speed, Green Adventure
+            </span>
+          </div>
+          <style>{`
+            @keyframes marqueeText {
+              0% { transform: translateX(0%); }
+              100% { transform: translateX(-50%); }
+            }
+          `}</style>
         </div>
-        <style>{`
-          @keyframes marqueeText {
-            0% { transform: translateX(0%); }
-            100% { transform: translateX(-50%); }
-          }
-        `}</style>
-      </div>
       </section>
-    
+
+      {/* Shop Best Seller Section */}
+      <section className="w-full mx-auto px-4 sm:px-8 md:px-12 py-24 flex flex-col items-center">
+        <h2 className="text-3xl md:text-4xl font-bold text-center mb-2 text-white">Shop Best Seller</h2>
+        <p className="text-center max-w-2xl mx-auto text-gray-400 mb-12 text-lg">Discover our most popular electric bikes, chosen for their performance, reliability, and style. Perfect for every journey.</p>
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 w-full">
+          <BestSellerCard
+            image={featureImg}
+            title="Glidex Pro X1"
+            description="A high-performance e-bike for city and adventure."
+            features={[
+              { icon: 'battery', label: '77KWH' },
+              { icon: 'range', label: '126 KM' },
+              { icon: 'emission', label: '0.12g/Km' },
+            ]}
+          />
+          <BestSellerCard
+            image={featureImg}
+            title="Glidex Urban Lite"
+            description="Lightweight, efficient, and perfect for daily commutes."
+            features={[
+              { icon: 'battery', label: '77KWH' },
+              { icon: 'range', label: '126 KM' },
+              { icon: 'emission', label: '0.12g/Km' },
+            ]}
+          />
+          <BestSellerCard
+            image={featureImg}
+            title="Glidex Explorer Z"
+            description="Built for long range and rugged terrain."
+            features={[
+              { icon: 'battery', label: '77KWH' },
+              { icon: 'range', label: '126 KM' },
+              { icon: 'emission', label: '0.12g/Km' },
+            ]}
+          />
+        </div>
+      </section>
     </>
   );
 }
+
+
+import { BestSellerCard } from "../components/BestSellerCard";
