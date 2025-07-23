@@ -1,0 +1,53 @@
+/* src/components/BookTodayButton.css */
+.glare-btn:hover .glare-effect {
+  animation: glare-move 0.8s linear;
+}
+@keyframes glare-move {
+  0% {
+    left: -75%;
+    opacity: 0.4;
+  }
+  60% {
+    left: 110%;
+    opacity: 0.5;
+  }
+  100% {
+    left: 110%;
+    opacity: 0;
+  }
+}
+.glare-effect {
+  background: linear-gradient(120deg, rgba(255,255,255,0.2) 0%, rgba(255,255,255,0.8) 60%, rgba(255,255,255,0.2) 100%);
+  border-radius: 9999px;
+  filter: blur(1px);
+}
+.shiny-flare::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -60%;
+  width: 60%;
+  height: 100%;
+  background: linear-gradient(120deg, rgba(255,255,255,0.0) 0%, rgba(255,255,255,0.7) 50%, rgba(255,255,255,0.0) 100%);
+  transform: skewX(-20deg);
+  opacity: 0.7;
+  pointer-events: none;
+  transition: none;
+}
+.shiny-flare:hover::before {
+  animation: shiny-move 0.8s linear;
+}
+@keyframes shiny-move {
+  0% {
+    left: -60%;
+    opacity: 0.7;
+  }
+  60% {
+    left: 120%;
+    opacity: 1;
+  }
+  100% {
+    left: 120%;
+    opacity: 0;
+  }
+}
