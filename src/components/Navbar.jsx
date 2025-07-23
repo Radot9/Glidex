@@ -37,7 +37,7 @@ export default function Navbar() {
         <img
           src={GlidexLogo}
           alt="Glidex Logo"
-          className="h-10 w-auto max-h-10 object-contain"
+          className="h-8 w-auto max-h-8 object-contain md:h-10 md:max-h-10"
         />
       </div>
       {/* Left: Nav Links */}

@@ -199,7 +199,7 @@ export default function Home() {
       <section className="w-full mx-auto px-4 sm:px-8 md:px-12 py-24 flex flex-col items-center">
         <div>
           <motion.h2
-            className="text-3xl font-bold text-center mb-4"
+            className="text-3xl font-bold text-center mb-4 text-white"
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, amount: 0.7 }}
