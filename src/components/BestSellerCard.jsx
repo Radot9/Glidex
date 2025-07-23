@@ -2,7 +2,8 @@ import batteryIcon from '../images/battery.svg';
 import rangeIcon from '../images/range.svg';
 import emissionIcon from '../images/emission.svg';
 
-export function BestSellerCard({ image, title, description, features }) {
+
+export function BestSellerCard({ image, title, description, features, isNewArrival }) {
   // Map icon keys to imported SVGs
   const iconMap = {
     battery: batteryIcon,
@@ -10,7 +11,13 @@ export function BestSellerCard({ image, title, description, features }) {
     emission: emissionIcon,
   };
   return (
-    <div className="shadow-lg overflow-hidden flex flex-col items-center w-full" style={{ minHeight: 600, background: '#252525' }}>
+    <div className="shadow-lg overflow-hidden flex flex-col items-center w-full" style={{ minHeight: 600, background: '#252525', position: 'relative' }}>
+      {/* New Arrival Tag (only for new arrival card) */}
+      {isNewArrival && (
+        <span className="absolute left-0 top-4 z-10 bg-[#2DFF28] text-black font-bold text-xs px-3 py-1 rounded-r-full shadow-lg tracking-wide animate-pulse" style={{ borderTopLeftRadius: 0, borderBottomLeftRadius: 0 }}>
+          New Arrival
+        </span>
+      )}
       <img src={image} alt={title} className="w-full object-cover mb-6" style={{ height: 520, maxHeight: 520 }} />
       <h3 className="text-xl font-bold text-white mb-2 text-left w-full px-8">{title}</h3>
       <p className="text-gray-300 text-base mb-8 text-left w-full px-8">{description}</p>

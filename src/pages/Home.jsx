@@ -249,7 +249,7 @@ export default function Home() {
           </div>
         </motion.div>
         <motion.p
-          className="text-center max-w-3xl mx-auto text-gray-400 my-8"
+          className="text-center max-w-3xl mx-auto text-gray-400 my-8 text-lg"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, amount: 0.7 }}
@@ -310,7 +310,7 @@ export default function Home() {
     
 
       {/* Shop Best Seller Section */}
-      <section className="w-full mx-auto px-4 sm:px-8 md:px-12 py-24 flex flex-col items-center">
+      <section className="w-full mx-auto px-4 sm:px-8 md:px-12 py-12 flex flex-col items-center">
         <h2 className="text-3xl md:text-4xl font-bold text-center mb-2 text-white">Shop Best Seller</h2>
         <p className="text-center max-w-2xl mx-auto text-gray-400 mb-12 text-lg">Discover our most popular electric bikes, chosen for their performance, reliability, and style. Perfect for every journey.</p>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 w-full">
@@ -343,6 +343,7 @@ export default function Home() {
               { icon: 'range', label: '126 KM' },
               { icon: 'emission', label: '0.12g/Km' },
             ]}
+            isNewArrival={true}
           />
         </div>
         {/* Countdown Timer Section */}
@@ -351,7 +352,7 @@ export default function Home() {
           {/* Text Left */}
           <div className="w-full md:w-1/2 text-left">
             <h3 className="text-2xl md:text-3xl font-bold text-white mb-2">Grab Soon! Offer Ends Soon.</h3>
-            <p className="text-gray-300 text-base md:text-lg mb-0">Don't miss out on our limited-time deals for our best-selling e-bikes. Secure yours before the countdown hits zero!</p>
+            <p className="text-gray-300 text-base mb-0">Don't miss out on our limited-time deals for our best-selling e-bikes. Secure yours before the countdown hits zero!</p>
           </div>
           {/* Timer Right */}
           <div className="w-full md:w-1/2 flex justify-end">
