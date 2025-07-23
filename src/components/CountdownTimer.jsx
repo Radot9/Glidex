@@ -26,7 +26,7 @@ export default function CountdownTimer() {
 
   const entries = Object.entries(timeLeft);
   return (
-    <div className="flex flex-row gap-6 md:gap-10 items-center bg-[#181818] px-6 py-4 min-w-[260px] justify-center w-full">
+    <div className="flex flex-row gap-0 md:gap-2 lg:gap-6 xl:gap-10 items-center bg-[#181818] px-6 py-4 min-w-[260px] justify-center w-full">
       {entries.map(([label, value], idx) => (
         <>
           <div key={label} className="flex flex-col items-center px-2">
