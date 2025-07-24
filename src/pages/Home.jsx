@@ -32,6 +32,14 @@ export default function Home() {
     }
   }, [current, slideCount]);
 
+  // Auto-advance carousel every SLIDE_DURATION ms
+  useEffect(() => {
+    const timer = setInterval(() => {
+      nextSlide();
+    }, SLIDE_DURATION);
+    return () => clearInterval(timer);
+  }, [current, slideCount]);
+
   const nextSlide = () => {
     setCurrent((prev) => (prev + 1) % slideCount);
   };
