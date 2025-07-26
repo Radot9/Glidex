@@ -5,11 +5,10 @@ import proX1Img from "../images/glider-pro-x1.jpg";
 import urbanLiteImg from "../images/glider-urban-lite.jpg";
 import explorerZImg from "../images/glider-explorer-z.jpg";
 import BookTodayButton from "../components/BookTodayButton";
-
 import featureImg from "../images/electric-scooter-feature-1.jpg";
 import { BestSellerCard } from "../components/BestSellerCard";
 import CountdownTimer from "../components/CountdownTimer";
-
+import CountUpNumber from "../components/CountUpNumber";
 
 const SLIDE_DURATION = 10000; // 10 seconds
 
@@ -208,7 +207,7 @@ export default function Home() {
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, amount: 0.7 }}
-            transition={{ duration: 0.7, ease: 'easeOut' }}
+            transition={{ duration: 0.7, ease: "easeOut" }}
           >
             Elevate Your Ride with Electric Power
           </motion.h2>
@@ -217,7 +216,7 @@ export default function Home() {
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, amount: 0.7 }}
-            transition={{ duration: 0.7, ease: 'easeOut', delay: 0.15 }}
+            transition={{ duration: 0.7, ease: "easeOut", delay: 0.15 }}
           >
             Built for reliability and innovation, our e-bikes empower your
             journey with speed, range, and comfort—wherever the road takes you.
@@ -235,23 +234,31 @@ export default function Home() {
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, amount: 0.5 }}
-          transition={{ duration: 0.7, ease: 'easeOut', delay: 0.2 }}
+          transition={{ duration: 0.7, ease: "easeOut", delay: 0.2 }}
         >
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8 w-full max-w-5xl text-center">
             <div>
-              <div className="text-4xl md:text-5xl font-extrabold text-white">60mph</div>
+              <div className="text-4xl md:text-5xl font-extrabold text-white">
+                60mph
+              </div>
               <div className="text-sm text-gray-400 mt-2">4-speed mode</div>
             </div>
             <div>
-              <div className="text-4xl md:text-5xl font-extrabold text-white">12mi</div>
+              <div className="text-4xl md:text-5xl font-extrabold text-white">
+                12mi
+              </div>
               <div className="text-sm text-gray-400 mt-2">Km Range</div>
             </div>
             <div>
-              <div className="text-4xl md:text-5xl font-extrabold text-white">440lbs</div>
+              <div className="text-4xl md:text-5xl font-extrabold text-white">
+                440lbs
+              </div>
               <div className="text-sm text-gray-400 mt-2">Frame Weight</div>
             </div>
             <div>
-              <div className="text-4xl md:text-5xl font-extrabold text-white">24kw</div>
+              <div className="text-4xl md:text-5xl font-extrabold text-white">
+                24kw
+              </div>
               <div className="text-sm text-gray-400 mt-2">Per charge</div>
             </div>
           </div>
@@ -261,7 +268,7 @@ export default function Home() {
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, amount: 0.7 }}
-          transition={{ duration: 0.7, ease: 'easeOut', delay: 0.25 }}
+          transition={{ duration: 0.7, ease: "easeOut", delay: 0.25 }}
         >
           Our electric bikes deliver outstanding performance with a top speed of
           60mph, a range of up to 12 miles on a single charge, and a lightweight
@@ -272,11 +279,12 @@ export default function Home() {
         </motion.p>
         <div className="relative w-full flex justify-center items-center my-8">
           {/* Divider line */}
-          <div 
+          <div
             className="absolute left-0 right-0 top-1/2 -translate-y-1/2 h-[1px] w-full z-0"
             style={{
-              background: 'linear-gradient(90deg, rgba(255,255,255,0) 0%, rgba(255,255,255,0.18) 20%, rgba(255,255,255,0.18) 80%, rgba(255,255,255,0) 100%)',
-              border: 'none',
+              background:
+                "linear-gradient(90deg, rgba(255,255,255,0) 0%, rgba(255,255,255,0.18) 20%, rgba(255,255,255,0.18) 80%, rgba(255,255,255,0) 100%)",
+              border: "none",
             }}
           />
           <div className="action flex gap-6 justify-center w-full relative z-10">
@@ -287,23 +295,28 @@ export default function Home() {
           </div>
         </div>
         {/* Marquee Text */}
-        <div 
+        <div
           className="w-full overflow-hidden my-8 relative"
           style={{
-            maskImage: 'linear-gradient(90deg, transparent 0%, #000 30%, #000 70%, transparent 100%)',
-            WebkitMaskImage: 'linear-gradient(90deg, transparent 0%, #000 30%, #000 70%, transparent 100%)',
+            maskImage:
+              "linear-gradient(90deg, transparent 0%, #000 30%, #000 70%, transparent 100%)",
+            WebkitMaskImage:
+              "linear-gradient(90deg, transparent 0%, #000 30%, #000 70%, transparent 100%)",
           }}
         >
           <div
             className="marquee-inner whitespace-nowrap text-4xl font-bold tracking-wide text-gray-400"
             style={{
-              display: 'inline-block',
-              whiteSpace: 'nowrap',
-              animation: 'marqueeText 12s linear infinite',
+              display: "inline-block",
+              whiteSpace: "nowrap",
+              animation: "marqueeText 12s linear infinite",
             }}
           >
-            <span style={{ display: 'inline-block' }}>
-              *  Silent Speed, Green Adventure &nbsp; *  Silent Speed, Green Adventure &nbsp; *  Silent Speed, Green Adventure &nbsp; *  Silent Speed, Green Adventure &nbsp; *  Silent Speed, Green Adventure &nbsp; *  Silent Speed, Green Adventure
+            <span style={{ display: "inline-block" }}>
+              * Silent Speed, Green Adventure &nbsp; * Silent Speed, Green
+              Adventure &nbsp; * Silent Speed, Green Adventure &nbsp; * Silent
+              Speed, Green Adventure &nbsp; * Silent Speed, Green Adventure
+              &nbsp; * Silent Speed, Green Adventure
             </span>
           </div>
           <style>{`
@@ -315,21 +328,24 @@ export default function Home() {
         </div>
       </section>
 
-    
-
       {/* Shop Best Seller Section */}
       <section className="w-full mx-auto px-4 sm:px-8 md:px-12 py-12 flex flex-col items-center">
-        <h2 className="text-3xl md:text-4xl font-bold text-center mb-2 text-white">Shop Best Seller</h2>
-        <p className="text-center max-w-2xl mx-auto text-gray-400 mb-12 text-lg">Discover our most popular electric bikes, chosen for their performance, reliability, and style. Perfect for every journey.</p>
+        <h2 className="text-3xl md:text-4xl font-bold text-center mb-2 text-white">
+          Shop Best Seller
+        </h2>
+        <p className="text-center max-w-2xl mx-auto text-gray-400 mb-12 text-lg">
+          Discover our most popular electric bikes, chosen for their
+          performance, reliability, and style. Perfect for every journey.
+        </p>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 w-full">
           <BestSellerCard
             image={proX1Img}
             title="Glidex Pro X1"
             description="A high-performance e-bike for city and adventure."
             features={[
-              { icon: 'battery', label: '77KWH' },
-              { icon: 'range', label: '126 KM' },
-              { icon: 'emission', label: '0.12g/Km' },
+              { icon: "battery", label: "77KWH" },
+              { icon: "range", label: "126 KM" },
+              { icon: "emission", label: "0.12g/Km" },
             ]}
           />
           <BestSellerCard
@@ -337,9 +353,9 @@ export default function Home() {
             title="Glidex Urban Lite"
             description="Lightweight, efficient, and perfect for daily commutes."
             features={[
-              { icon: 'battery', label: '77KWH' },
-              { icon: 'range', label: '126 KM' },
-              { icon: 'emission', label: '0.12g/Km' },
+              { icon: "battery", label: "77KWH" },
+              { icon: "range", label: "126 KM" },
+              { icon: "emission", label: "0.12g/Km" },
             ]}
           />
           <BestSellerCard
@@ -347,31 +363,145 @@ export default function Home() {
             title="Glidex Explorer Z"
             description="Built for long range and rugged terrain."
             features={[
-              { icon: 'battery', label: '77KWH' },
-              { icon: 'range', label: '126 KM' },
-              { icon: 'emission', label: '0.12g/Km' },
+              { icon: "battery", label: "77KWH" },
+              { icon: "range", label: "126 KM" },
+              { icon: "emission", label: "0.12g/Km" },
             ]}
             isNewArrival={true}
           />
         </div>
         {/* Countdown Timer Section */}
-      <div className="w-full max-w-none py-8 flex flex-col items-center">
-        <div className="w-full bg-[#232323] shadow-lg flex flex-col md:flex-row items-center justify-between p-8 gap-8">
-          {/* Text Left */}
-          <div className="w-full md:w-1/2 text-left">
-            <h3 className="text-2xl md:text-3xl font-bold text-white mb-2">Grab Soon! Offer Ends Soon.</h3>
-            <p className="text-gray-300 text-base mb-0">Don't miss out on our limited-time deals for our best-selling e-bikes. Secure yours before the countdown hits zero!</p>
-          </div>
-          {/* Timer Right */}
-          <div className="w-full md:w-1/2 flex justify-end">
-            <CountdownTimer />
+        <div className="w-full max-w-none py-8 flex flex-col items-center">
+          <div className="w-full bg-[#232323] shadow-lg flex flex-col md:flex-row items-center justify-between p-8 gap-8">
+            {/* Text Left */}
+            <div className="w-full md:w-1/2 text-left">
+              <h3 className="text-2xl md:text-3xl font-bold text-white mb-2">
+                Grab Soon! Offer Ends Soon.
+              </h3>
+              <p className="text-gray-300 text-base mb-0">
+                Don't miss out on our limited-time deals for our best-selling
+                e-bikes. Secure yours before the countdown hits zero!
+              </p>
+            </div>
+            {/* Timer Right */}
+            <div className="w-full md:w-1/2 flex justify-end">
+              <CountdownTimer />
+            </div>
           </div>
         </div>
-      </div>
       </section>
 
-       
+      {/* Product Feature Section */}
+      <section className="relative w-screen left-1/2 right-1/2 -mx-[50vw] bg-black mt-12">
+        {/* Background Image */}
+        <div
+          className="w-full h-[420px] md:h-[520px] lg:h-[600px] flex items-center justify-center bg-cover bg-center relative"
+          style={{
+            backgroundImage: `url(${featureImg})`,
+            minHeight: 320,
+          }}
+        >
+          {/* Overlay */}
+          <div className="absolute inset-0 bg-black/60" />
+          {/* Content */}
+          <div className="relative z-10 flex items-center h-full w-full max-w-7xl mx-auto px-6">
+            {/* Vertical Divider */}
+            <div className="hidden md:block h-32 w-1 bg-[#2DFF28] mr-8 rounded-full" />
+            {/* Texts */}
+            <div className="flex flex-col gap-2">
+              <span className="uppercase tracking-widest text-[#2DFF28] font-semibold text-sm md:text-base mb-1">
+                Ultra High Performance
+              </span>
+              <span className="text-white font-extrabold text-4xl md:text-6xl lg:text-7xl leading-tight flex items-baseline">
+                0&nbsp;–&nbsp;
+                <CountUpNumber
+                  from={1}
+                  to={60}
+                  duration={1.5}
+                  className="inline text-white font-extrabold text-4xl md:text-6xl lg:text-7xl leading-tight"
+                />
+                <span className="ml-2 text-2xl md:text-4xl lg:text-5xl text-[#2DFF28] font-bold">
+                  mph
+                </span>
+              </span>
+              <span className="text-gray-200 text-lg md:text-2xl font-medium">
+                in 4.2 sec<sup className="text-xs text-gray-400">*</sup>
+              </span>
+            </div>
+          </div>
+        </div>
+        {/* Features Grid */}
+        <div className="w-full max-w-7xl mx-auto px-6 py-12">
+          <div className="grid grid-cols-1 md:grid-cols-4 gap-8 relative">
+            {/* Vertical Dividers */}
+            <div className="hidden md:block absolute top-0 bottom-0 left-1/4 w-px bg-white/15" />
+            <div className="hidden md:block absolute top-0 bottom-0 left-2/4 w-px bg-white/15" />
+            <div className="hidden md:block absolute top-0 bottom-0 left-3/4 w-px bg-white/15" />
+            {/* Feature 1 */}
+            <div className="flex flex-col items-start">
+              <h4 className="text-white font-bold text-xl mb-2">
+                Anti-Theft Measures
+              </h4>
+              <p className="text-gray-400 text-base mb-1">
+                Advanced locking system and GPS tracking keep your ride secure
+                at all times.
+              </p>
+              <p className="text-gray-400 text-base mb-4">
+                Peace of mind wherever you park, with instant alerts to your
+                phone.
+              </p>
+              <span className="text-[#2DFF28] font-extrabold text-3xl mt-auto">
+                01
+              </span>
+            </div>
+            {/* Feature 2 */}
+            <div className="flex flex-col items-start">
+              <h4 className="text-white font-bold text-xl mb-2">
+                App Connectivity
+              </h4>
+              <p className="text-gray-400 text-base mb-1">
+                Seamlessly connect to your e-bike for ride stats, remote lock,
+                and updates.
+              </p>
+              <p className="text-gray-400 text-base mb-4">
+                Control and customize your experience from anywhere, anytime.
+              </p>
+              <span className="text-[#2DFF28] font-extrabold text-3xl mt-auto">
+                02
+              </span>
+            </div>
+            {/* Feature 3 */}
+            <div className="flex flex-col items-start">
+              <h4 className="text-white font-bold text-xl mb-2">LED Display</h4>
+              <p className="text-gray-400 text-base mb-1">
+                Crisp, daylight-readable LED dashboard for speed, battery, and
+                navigation.
+              </p>
+              <p className="text-gray-400 text-base mb-4">
+                Stay informed at a glance, even on the brightest days.
+              </p>
+              <span className="text-[#2DFF28] font-extrabold text-3xl mt-auto">
+                03
+              </span>
+            </div>
+            {/* Feature 4 */}
+            <div className="flex flex-col items-start">
+              <h4 className="text-white font-bold text-xl mb-2">
+                Tri-Foldable Design
+              </h4>
+              <p className="text-gray-400 text-base mb-1">
+                Innovative tri-fold frame for easy storage and portability.
+              </p>
+              <p className="text-gray-400 text-base mb-4">
+                Take your e-bike anywhere—fits in car trunks and tight spaces.
+              </p>
+              <span className="text-[#2DFF28] font-extrabold text-3xl mt-auto">
+                04
+              </span>
+            </div>
+          </div>
+        </div>
+      </section>
     </>
   );
 }
-
