@@ -9,6 +9,7 @@ import featureImg from "../images/electric-scooter-feature-1.jpg";
 import { BestSellerCard } from "../components/BestSellerCard";
 import CountdownTimer from "../components/CountdownTimer";
 import CountUpNumber from "../components/CountUpNumber";
+import MotionFadeIn from "../components/MotionFadeIn";
 
 const SLIDE_DURATION = 10000; // 10 seconds
 
@@ -438,67 +439,80 @@ export default function Home() {
             <div className="hidden md:block absolute top-0 bottom-0 left-2/4 w-px bg-white/15" />
             <div className="hidden md:block absolute top-0 bottom-0 left-3/4 w-px bg-white/15" />
             {/* Feature 1 */}
-            <div className="flex flex-col items-start">
-              <h4 className="text-white font-bold text-xl mb-2">
-                Anti-Theft Measures
-              </h4>
-              <p className="text-gray-400 text-base mb-1">
-                Advanced locking system and GPS tracking keep your ride secure
-                at all times.
-              </p>
-              <p className="text-gray-400 text-base mb-4">
-                Peace of mind wherever you park, with instant alerts to your
-                phone.
-              </p>
-              <span className="text-[#2DFF28] font-extrabold text-3xl mt-auto">
-                01
-              </span>
-            </div>
+            <MotionFadeIn delay={0.1} className="flex flex-col items-start">
+              <div className="flex flex-col items-start">
+                <h4 className="text-white font-bold text-xl mb-2">
+                  Anti-Theft Measures
+                </h4>
+                <p className="text-gray-400 text-base mb-1">
+                  Advanced locking system and GPS tracking keep your ride secure
+                  at all times.
+                </p>
+                <p className="text-gray-400 text-base mb-4">
+                  Peace of mind wherever you park, with instant alerts to your
+                  phone.
+                </p>
+                <span className="text-[#2DFF28] font-extrabold text-3xl mt-auto">
+                  01
+                </span>
+              </div>
+            </MotionFadeIn>
+
             {/* Feature 2 */}
-            <div className="flex flex-col items-start">
-              <h4 className="text-white font-bold text-xl mb-2">
-                App Connectivity
-              </h4>
-              <p className="text-gray-400 text-base mb-1">
-                Seamlessly connect to your e-bike for ride stats, remote lock,
-                and updates.
-              </p>
-              <p className="text-gray-400 text-base mb-4">
-                Control and customize your experience from anywhere, anytime.
-              </p>
-              <span className="text-[#2DFF28] font-extrabold text-3xl mt-auto">
-                02
-              </span>
-            </div>
+            <MotionFadeIn delay={0.2} className="flex flex-col items-start">
+              <div className="flex flex-col items-start">
+                <h4 className="text-white font-bold text-xl mb-2">
+                  App Connectivity
+                </h4>
+                <p className="text-gray-400 text-base mb-1">
+                  Seamlessly connect to your e-bike for ride stats, remote lock,
+                  and updates.
+                </p>
+                <p className="text-gray-400 text-base mb-4">
+                  Control and customize your experience from anywhere, anytime.
+                </p>
+                <span className="text-[#2DFF28] font-extrabold text-3xl mt-auto">
+                  02
+                </span>
+              </div>
+            </MotionFadeIn>
+
             {/* Feature 3 */}
-            <div className="flex flex-col items-start">
-              <h4 className="text-white font-bold text-xl mb-2">LED Display</h4>
-              <p className="text-gray-400 text-base mb-1">
-                Crisp, daylight-readable LED dashboard for speed, battery, and
-                navigation.
-              </p>
-              <p className="text-gray-400 text-base mb-4">
-                Stay informed at a glance, even on the brightest days.
-              </p>
-              <span className="text-[#2DFF28] font-extrabold text-3xl mt-auto">
-                03
-              </span>
-            </div>
+            <MotionFadeIn delay={0.3} className="flex flex-col items-start">
+              <div className="flex flex-col items-start">
+                <h4 className="text-white font-bold text-xl mb-2">
+                  LED Display
+                </h4>
+                <p className="text-gray-400 text-base mb-1">
+                  Crisp, daylight-readable LED dashboard for speed, battery, and
+                  navigation.
+                </p>
+                <p className="text-gray-400 text-base mb-4">
+                  Stay informed at a glance, even on the brightest days.
+                </p>
+                <span className="text-[#2DFF28] font-extrabold text-3xl mt-auto">
+                  03
+                </span>
+              </div>
+            </MotionFadeIn>
+
             {/* Feature 4 */}
-            <div className="flex flex-col items-start">
-              <h4 className="text-white font-bold text-xl mb-2">
-                Tri-Foldable Design
-              </h4>
-              <p className="text-gray-400 text-base mb-1">
-                Innovative tri-fold frame for easy storage and portability.
-              </p>
-              <p className="text-gray-400 text-base mb-4">
-                Take your e-bike anywhere—fits in car trunks and tight spaces.
-              </p>
-              <span className="text-[#2DFF28] font-extrabold text-3xl mt-auto">
-                04
-              </span>
-            </div>
+            <MotionFadeIn delay={0.4} className="flex flex-col items-start">
+              <div className="flex flex-col items-start">
+                <h4 className="text-white font-bold text-xl mb-2">
+                  Tri-Foldable Design
+                </h4>
+                <p className="text-gray-400 text-base mb-1">
+                  Innovative tri-fold frame for easy storage and portability.
+                </p>
+                <p className="text-gray-400 text-base mb-4">
+                  Take your e-bike anywhere—fits in car trunks and tight spaces.
+                </p>
+                <span className="text-[#2DFF28] font-extrabold text-3xl mt-auto">
+                  04
+                </span>
+              </div>
+            </MotionFadeIn>
           </div>
         </div>
       </section>
