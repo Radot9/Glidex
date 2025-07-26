@@ -516,6 +516,68 @@ export default function Home() {
           </div>
         </div>
       </section>
+
+      {/* About Ride Club Section */}
+      <section className="w-full mx-auto px-4 sm:px-8 md:px-12 py-24 flex flex-col items-center">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 w-full mb-12">
+          {/* New Arrivals */}
+          <div
+            className="relative rounded-2xl overflow-hidden flex flex-col justify-end min-h-[320px] bg-cover bg-center"
+            style={{
+              backgroundImage: `url(${proX1Img})`,
+            }}
+          >
+            <div className="absolute inset-0 bg-black/40" />
+            <div className="relative z-10 p-8 flex flex-col items-start">
+              <span className="text-[#2DFF28] font-bold text-lg uppercase mb-2 tracking-widest">
+                New Arrivals
+              </span>
+              <a
+                href="#"
+                className="inline-block mt-4 text-[#2DFF28] font-bold underline underline-offset-4 hover:text-[#24cc20] transition-colors"
+              >
+                Book Now
+              </a>
+            </div>
+          </div>
+          {/* All New CX - 340 */}
+          <div
+            className="relative rounded-2xl overflow-hidden flex flex-col justify-end min-h-[320px] bg-cover bg-center"
+            style={{
+              backgroundImage: `url(${explorerZImg})`,
+            }}
+          >
+            <div className="absolute inset-0 bg-black/40" />
+            <div className="relative z-10 p-8 flex flex-col items-start">
+              <span className="text-white font-bold text-2xl mb-2">
+                All New CX - 340
+              </span>
+              <p className="text-gray-200 text-base mb-0">
+                Experience the next generation of e-biking with the CX-340.
+                Designed for performance and comfort, it’s perfect for city
+                commutes and weekend adventures alike.
+              </p>
+            </div>
+          </div>
+        </div>
+        {/* About Ride Club Title & Description */}
+        <div className="w-full max-w-3xl text-center flex flex-col items-center">
+          <h2 className="text-3xl md:text-4xl font-bold mb-4 text-white">
+            About Ride Club
+          </h2>
+
+          <p className="text-center max-w-3xl mx-auto text-gray-400 mb-12 text-lg">
+            Ride Club is your gateway to a vibrant community of e-bike
+            enthusiasts. As a member, you’ll enjoy exclusive access to new
+            product launches, special events, and expert-led workshops. Whether
+            you’re a daily commuter or a weekend explorer, Ride Club connects
+            you with like-minded riders and the latest in electric mobility.
+            Join us and elevate your ride with perks, support, and unforgettable
+            journeys.
+          </p>
+          <BookTodayButton />
+        </div>
+      </section>
     </>
   );
 }
